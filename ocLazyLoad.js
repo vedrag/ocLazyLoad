@@ -9,8 +9,8 @@
 
 	var ocLazyLoad = angular.module('oc.lazyLoad', ['ng']);
 
-	ocLazyLoad.provider('$ocLazyLoad', ['$controllerProvider', '$provide', '$compileProvider', '$filterProvider', '$injector',
-		function($controllerProvider, $provide, $compileProvider, $filterProvider, $injector) {
+	ocLazyLoad.provider('$ocLazyLoad', ['$controllerProvider', '$provide', '$compileProvider', '$filterProvider', '$injector','$animateProvider',
+		function($controllerProvider, $provide, $compileProvider, $filterProvider, $injector,$animateProvider) {
 
 			var modules = {},
 				asyncLoader,
@@ -20,7 +20,8 @@
 					$compileProvider: $compileProvider,
 					$filterProvider: $filterProvider,
 					$provide: $provide, // other things
-					$injector: $injector
+					$injector: $injector,
+					$animateProvider: $animateProvider
 				};
 
 			this.$get = ['$timeout', '$log', '$q', '$templateCache', '$http', '$rootElement', function($timeout, $log, $q, $templateCache, $http, $rootElement) {
